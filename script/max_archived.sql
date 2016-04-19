@@ -1,0 +1,12 @@
+-- ********************************************************************
+-- * Copyright Notice   : (c)2015,2016 Peng Liu.
+-- * Filename           : base_var.sql
+-- * Author             : Peng Liu
+-- * Original           : 20160419
+-- * Last Update        : 20160419
+-- * Description        : query the max sequence archive log
+-- *                      on primary database
+-- *                      
+-- * Usage              : be called by check.sql
+-- ********************************************************************
+SELECT MAX(SEQUENCE#), THREAD# FROM V$ARCHIVED_LOG GROUP BY THREAD#;
